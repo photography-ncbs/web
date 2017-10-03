@@ -16,6 +16,9 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { AdminComponent } from './admin/admin.component';
 import { MdDatepickerModule, MdNativeDateModule } from '@angular/material';
 import { MdFormFieldModule, MdInputModule } from '@angular/material';
+import { CreateComponent } from './admin/create/create.component';
+import { EnlistComponent } from './admin/enlist/enlist.component';
+import { UpdateComponent } from './admin/update/update.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +27,9 @@ import { MdFormFieldModule, MdInputModule } from '@angular/material';
         LoginComponent,
         GalleryComponent,
         AdminComponent,
+        CreateComponent,
+        EnlistComponent,
+        UpdateComponent,
     ],
     imports: [
         BrowserAnimationsModule,

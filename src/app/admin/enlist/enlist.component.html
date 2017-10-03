@@ -1,0 +1,24 @@
+<div [ngClass]=showProgress>
+    <progress value="0" max="100"></progress>
+</div>
+<div class="row">
+    <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12" *ngFor="let theme of themeList">
+        <div class="card">
+            <div class="card-header">
+                {{theme.name}}
+            </div>
+            <div class="card-block">
+                <div class="card-title">
+                   {{theme.submissionDate}} - {{theme.judgingDate}}
+                </div>
+                <div class="card-text">
+                   {{theme.details}}
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link">Footer Action 1</button>
+                <button class="btn btn-sm btn-link">Footer Action 2</button>
+            </div>
+        </div>
+    </div>
+</div>

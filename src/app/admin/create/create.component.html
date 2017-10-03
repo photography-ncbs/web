@@ -1,0 +1,82 @@
+<div class="row flex-items-xs-center">
+    
+        <div [ngClass]= mainCardClass  *ngIf = "!showConfirmation">
+            <div class="card-header">
+                Create new Theme
+            </div>
+            <div class="card-block">
+                <div [ngClass]=showProgress>
+                    <progress value="..." max="100"></progress>
+                </div>
+                <form>
+    
+                    <md-form-field class="full-parent">
+                        <input mdInput [(ngModel)]="themeName" name="themeName" placeholder="Name">
+                        <md-hint *ngIf=v alidName class="error-hint">
+                            Theme name is <strong>required</strong>
+                        </md-hint>
+                    </md-form-field>
+                    <div>
+                        <md-form-field>
+                            <input mdInput [mdDatepicker]="picker" placeholder="Submission Phase" (dateInput)="onInput($event,0)" (dateChange)="onInput($event,0)">
+                            <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+                            <md-datepicker #picker></md-datepicker>
+                            <md-hint *ngIf=s ubmissionValid class="error-hint">
+                                Invalid Date
+                            </md-hint>
+                        </md-form-field>
+                        <md-form-field>
+                            <input mdInput [mdDatepicker]="picker2" placeholder="Voting Phase" (dateInput)="onInput($event,1)" (dateChange)="onInput($event,1)">
+                            <md-datepicker-toggle mdSuffix [for]="picker2"></md-datepicker-toggle>
+                            <md-datepicker #picker2></md-datepicker>
+                            <md-hint *ngIf=v otingDateValid class="error-hint">
+                                Invalid Date
+                            </md-hint>
+                        </md-form-field>
+                        <md-form-field>
+                            <input mdInput [mdDatepicker]="picker3" placeholder="Judging Deadline" (dateInput)="onInput($event,2)" (dateChange)="onInput($event,2)">
+                            <md-datepicker-toggle mdSuffix [for]="picker3"></md-datepicker-toggle>
+                            <md-datepicker #picker3></md-datepicker>
+                            <md-hint *ngIf=j udgingDateValid class="error-hint">
+                                Invalid Date
+                            </md-hint>
+                        </md-form-field>
+                    </div>
+                    <md-form-field class="full-parent">
+                        <textarea mdInput [(ngModel)]="themeDetails" name="themeDetails" placeholder="Theme Details" value=""></textarea>
+                        <md-hint *ngIf=v alidDetails class="error-hint">
+                            Provide some details about current theme.
+                        </md-hint>
+                    </md-form-field>
+    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-sm btn-link" (click)="validate()">Create</button >
+            </div>
+        </div>
+
+        <div [ngClass]= mainCardClass  *ngIf = "showConfirmation">
+    
+                <div class="card-header">
+                    Done!
+                </div>
+                <div class="card-block">
+                    <div class="card-title">
+                        '{{themeName}}' created successfully!
+                    </div>
+                    <div class="card-text">
+                        <p>{{themeDetails}}</p>
+                        <p>Uploading starts on: {{submissionDate}}</p>
+                        <p>Voting starts on: {{votingDate}}</p>
+                        <p>Judging ends on: {{judgingDate}}</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-sm btn-link">Create one more</button>
+                    <button class="btn btn-sm btn-link">See list</button>
+                </div>
+        </div>
+    
+    </div>
+    

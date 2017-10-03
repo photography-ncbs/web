@@ -1,23 +1,37 @@
 <clr-main-container>
-  <clr-header>
-    <div class="branding">
-      <a href="#" class="nav-link">
+    <clr-header>
+        <div class="branding">
+            <a href="#" class="nav-link">
         <span class="clr-icon clr-clarity-logo"></span>
         <span class="title">Clarity</span>
       </a>
+        </div>
+
+        <div class="header-actions">
+        </div>
+    </clr-header>
+    <div class="content-container">
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+        <nav class="sidenav" [clr-nav-level]="1">
+            <section class="sidenav-content">
+                <a class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="active"><span class="nav-text">Home</span></a>
+                <a class="nav-link" href="#" [routerLink]="['/login']" routerLinkActive="active"><span class="nav-text">Login</span></a>
+                <a class="nav-link" href="#" [routerLink]="['/gallery']" routerLinkActive="active"><span class="nav-text">Gallery</span></a>
+                <section class="nav-group">
+                    <input id="tabexample2" type="checkbox">
+                    <label for="tabexample2">Admin</label>
+                    <ul class="nav-list">
+                        <a class="nav-link" href="#" [routerLink]="['/admin']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span class="nav-text">Dashboard</span></a>
+                        <a class="nav-link" href="#" [routerLink]="['/admin/enlist']" routerLinkActive="active"><span class="nav-text">All Themes</span></a>
+                        <a class="nav-link" href="#" [routerLink]="['/admin/create']" routerLinkActive="active"><span class="nav-text">Create Theme</span></a>
+                        <a class="nav-link" href="#" [routerLink]="['/admin/update']" routerLinkActive="active"><span class="nav-text">Update Photos</span></a>
+                        
+                    </ul>
+                </section>
+
+            </section>
+        </nav>
     </div>
-      <div class="header-nav" [clr-nav-level]="1">
-          <a class="nav-link" href="#" [routerLink]="['/home']" routerLinkActive="active"><span class="nav-text">Home</span></a>
-          <a class="nav-link" href="#" [routerLink]="['/login']" routerLinkActive="active"><span class="nav-text">Login</span></a>
-          <a class="nav-link" href="#" [routerLink]="['/gallery']" routerLinkActive="active"><span class="nav-text">Gallery</span></a>
-          <a class="nav-link" href="#" [routerLink]="['/admin']" routerLinkActive="active"><span class="nav-text">Admin</span></a>
-      </div>
-    <div class="header-actions">
-    </div>
-  </clr-header>
-  <div class="content-container">
-    <div class="content-area">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
 </clr-main-container>
